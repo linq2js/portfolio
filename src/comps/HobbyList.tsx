@@ -1,0 +1,3 @@
+const HobbyList = () => {};
+
+export { HobbyList };
