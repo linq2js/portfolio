@@ -279,6 +279,7 @@ const portfolio: Portfolio = {
       stack: (
         <>
           {stack.react}
+          {stack.nextjs}
           {stack.flutter}
         </>
       ),
