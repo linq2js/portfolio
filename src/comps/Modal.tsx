@@ -16,8 +16,9 @@ export type Props = PropsWithChildren<{
   onHide?: VoidFunction;
 }>;
 
-const ANIMATE_IN = "backInDown";
-const ANIMATE_OUT = "backOutDown";
+const ANIMATION_IN = "fadeIn";
+const ANIMATION_OUT = "rotateOut";
+const ANIMATION_DELAY = 600;
 
 const Modal = ({ show, onHide, type, children, inline }: Props) => {
   const [uncontrolledShow, setUncontrolledShow] = useState(show);
@@ -35,9 +36,9 @@ const Modal = ({ show, onHide, type, children, inline }: Props) => {
       }
     };
 
-    containerRef.current?.classList.remove(...animate(ANIMATE_IN).split(" "));
-    containerRef.current?.classList.add(...animate(ANIMATE_OUT).split(" "));
-    setTimeout(hide, 400);
+    containerRef.current?.classList.remove(...animate(ANIMATION_IN).split(" "));
+    containerRef.current?.classList.add(...animate(ANIMATION_OUT).split(" "));
+    setTimeout(hide, ANIMATION_DELAY);
   }, [onHide, inline, setUncontrolledShow]);
   const onPrint = useCallback(() => window.print(), []);
 
@@ -45,7 +46,7 @@ const Modal = ({ show, onHide, type, children, inline }: Props) => {
     <NoPrint>
       <div
         ref={containerRef}
-        className={`modal ${animate(ANIMATE_IN)}`}
+        className={`modal ${animate(ANIMATION_IN)}`}
         style={{ placeItems: inline ? "center" : "start" }}
       >
         <div className="modal-inner" style={{ maxWidth: inline ? "" : 800 }}>
