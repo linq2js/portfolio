@@ -5,6 +5,7 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { TbBrandNextjs } from "react-icons/tb";
 import { FaAws, FaReact } from "react-icons/fa";
 import {
+  SiApollographql,
   SiAzurefunctions,
   SiCss3,
   SiElectron,
@@ -30,8 +31,9 @@ import {
 import { FaNodeJs } from "react-icons/fa";
 import { StackIcon } from "../comps/StackIcon";
 
-const stack = {
+const tags = {
   javascript: <StackIcon type="Javascript" icon={<SiJavascript />} />,
+  apollo: <StackIcon type="Apollog" icon={<SiApollographql />} />,
   typescript: <StackIcon type="Typescript" icon={<SiTypescript />} />,
   html5: <StackIcon type="HTML5" icon={<SiHtml5 />} />,
   css3: <StackIcon type="CSS3" icon={<SiCss3 />} />,
@@ -64,8 +66,10 @@ const stack = {
   socket_io: <StackIcon type="SocketIO" icon="SocketIO" />,
   mssql: <StackIcon type="MSSQL" icon="MSSQL" />,
   dart: <StackIcon type="Dart" icon="Dart" />,
+  open_source: <StackIcon type="OpenSource" icon="OpenSource" />,
   "c#": <StackIcon type="C#" icon="C#" />,
   nx: <StackIcon type="Nx" icon="Nx" />,
+  iot: <StackIcon type="IOT" icon="IOT" />,
   mongo_db: <StackIcon type="MongoDB" icon={<SiMongodb />} />,
   prisma: <StackIcon type="Prisma" icon={<SiPrisma />} />,
   react_native: <StackIcon type="ReactNative" icon={<FaReact />} />,
@@ -117,11 +121,11 @@ const portfolio: Portfolio = {
     Scripting: {
       icon: (
         <>
-          {stack.javascript}
-          {stack.typescript}
-          {stack.html5}
-          {stack.css3}
-          {stack.tailwind}
+          {tags.javascript}
+          {tags.typescript}
+          {tags.html5}
+          {tags.css3}
+          {tags.tailwind}
         </>
       ),
       level: "Expert",
@@ -129,12 +133,13 @@ const portfolio: Portfolio = {
     React: {
       icon: (
         <>
-          {stack.react}
-          {stack.redux}
-          {stack.nextjs}
-          {stack.redux_saga}
-          {stack.styled_component}
-          {stack.jss}
+          {tags.react}
+          {tags.redux}
+          {tags.nextjs}
+          {tags.redux_saga}
+          {tags.styled_component}
+          {tags.jss}
+          {tags.apollo}
         </>
       ),
       level: "Expert",
@@ -142,10 +147,11 @@ const portfolio: Portfolio = {
     Server: {
       icon: (
         <>
-          {stack.nodejs}
-          {stack.express}
-          {stack.socket_io}
-          {stack.graphql}
+          {tags.nodejs}
+          {tags.express}
+          {tags.socket_io}
+          {tags.graphql}
+          {tags.apollo}
         </>
       ),
       level: "Expert",
@@ -153,10 +159,10 @@ const portfolio: Portfolio = {
     Cloud: {
       icon: (
         <>
-          {stack.azure}
-          {stack.azure_functions}
-          {stack.aws}
-          {stack.gcp}
+          {tags.azure}
+          {tags.azure_functions}
+          {tags.aws}
+          {tags.gcp}
         </>
       ),
       level: "Expert",
@@ -164,8 +170,8 @@ const portfolio: Portfolio = {
     Testing: {
       icon: (
         <>
-          {stack.jest}
-          {stack.mocha}
+          {tags.jest}
+          {tags.mocha}
         </>
       ),
       level: "Expert",
@@ -173,10 +179,10 @@ const portfolio: Portfolio = {
     Repo: {
       icon: (
         <>
-          {stack.yarn}
-          {stack.npm}
-          {stack.lerna}
-          {stack.nx}
+          {tags.yarn}
+          {tags.npm}
+          {tags.lerna}
+          {tags.nx}
         </>
       ),
       level: "Experienced",
@@ -184,8 +190,8 @@ const portfolio: Portfolio = {
     Database: {
       icon: (
         <>
-          {stack.mongo_db}
-          {stack.prisma}
+          {tags.mongo_db}
+          {tags.prisma}
         </>
       ),
       level: "Experienced",
@@ -193,15 +199,15 @@ const portfolio: Portfolio = {
     Mobile: {
       icon: (
         <>
-          {stack.react_native}
-          {stack.flutter}
-          {stack.expo}
+          {tags.react_native}
+          {tags.flutter}
+          {tags.expo}
         </>
       ),
       level: "Experienced",
     },
     Desktop: {
-      icon: <>{stack.electron}</>,
+      icon: <>{tags.electron}</>,
       level: "Experienced",
     },
   },
@@ -223,12 +229,13 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.react_native}
-          {stack.azure}
-          {stack.azure_functions}
-          {stack.nodejs}
-          {stack.mongo_db}
-          {stack.electron}
+          {tags.react_native}
+          {tags.azure}
+          {tags.azure_functions}
+          {tags.nodejs}
+          {tags.mongo_db}
+          {tags.electron}
+          {tags.iot}
         </>
       ),
     },
@@ -252,11 +259,12 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.react_native}
-          {stack.azure}
-          {stack.azure_functions}
-          {stack.nodejs}
-          {stack.mongo_db}
+          {tags.react_native}
+          {tags.azure}
+          {tags.azure_functions}
+          {tags.nodejs}
+          {tags.mongo_db}
+          {tags.iot}
         </>
       ),
     },
@@ -278,9 +286,9 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.react}
-          {stack.nextjs}
-          {stack.flutter}
+          {tags.react}
+          {tags.nextjs}
+          {tags.flutter}
         </>
       ),
     },
@@ -303,12 +311,13 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.react_native}
-          {stack.firebase}
-          {stack.azure}
-          {stack.azure_functions}
-          {stack.nodejs}
-          {stack.mongo_db}
+          {tags.react_native}
+          {tags.firebase}
+          {tags.azure}
+          {tags.azure_functions}
+          {tags.nodejs}
+          {tags.mongo_db}
+          {tags.iot}
         </>
       ),
     },
@@ -331,12 +340,13 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.react_native}
-          {stack.firebase}
-          {stack.azure}
-          {stack.azure_functions}
-          {stack.nodejs}
-          {stack.mongo_db}
+          {tags.react_native}
+          {tags.firebase}
+          {tags.azure}
+          {tags.azure_functions}
+          {tags.nodejs}
+          {tags.mongo_db}
+          {tags.iot}
         </>
       ),
     },
@@ -358,13 +368,13 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.react}
-          {stack.phaser}
-          {stack.nodejs}
-          {stack["c#"]}
-          {stack.mssql}
-          {stack.socket_io}
-          {stack.mongo_db}
+          {tags.react}
+          {tags.phaser}
+          {tags.nodejs}
+          {tags["c#"]}
+          {tags.mssql}
+          {tags.socket_io}
+          {tags.mongo_db}
         </>
       ),
     },
@@ -381,11 +391,12 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.vscode}
-          {stack.typescript}
-          {stack.lerna}
-          {stack.jest}
-          {stack.npm}
+          {tags.vscode}
+          {tags.typescript}
+          {tags.lerna}
+          {tags.jest}
+          {tags.npm}
+          {tags.open_source}
         </>
       ),
     },
@@ -400,11 +411,12 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.react}
-          {stack.typescript}
-          {stack.lerna}
-          {stack.jest}
-          {stack.npm}
+          {tags.react}
+          {tags.typescript}
+          {tags.lerna}
+          {tags.jest}
+          {tags.npm}
+          {tags.open_source}
         </>
       ),
     },
@@ -419,10 +431,11 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.typescript}
-          {stack.lerna}
-          {stack.jest}
-          {stack.npm}
+          {tags.typescript}
+          {tags.lerna}
+          {tags.jest}
+          {tags.npm}
+          {tags.open_source}
         </>
       ),
     },
@@ -437,10 +450,11 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.typescript}
-          {stack.lerna}
-          {stack.jest}
-          {stack.npm}
+          {tags.typescript}
+          {tags.lerna}
+          {tags.jest}
+          {tags.npm}
+          {tags.open_source}
         </>
       ),
     },
@@ -455,12 +469,13 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.typescript}
-          {stack.react}
-          {stack.redux}
-          {stack.lerna}
-          {stack.jest}
-          {stack.npm}
+          {tags.typescript}
+          {tags.react}
+          {tags.redux}
+          {tags.lerna}
+          {tags.jest}
+          {tags.npm}
+          {tags.open_source}
         </>
       ),
     },
@@ -475,11 +490,12 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.typescript}
-          {stack.react}
-          {stack.lerna}
-          {stack.jest}
-          {stack.npm}
+          {tags.typescript}
+          {tags.react}
+          {tags.lerna}
+          {tags.jest}
+          {tags.npm}
+          {tags.open_source}
         </>
       ),
     },
@@ -494,10 +510,11 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.typescript}
-          {stack.lerna}
-          {stack.jest}
-          {stack.npm}
+          {tags.typescript}
+          {tags.lerna}
+          {tags.jest}
+          {tags.npm}
+          {tags.open_source}
         </>
       ),
     },
@@ -515,10 +532,11 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.typescript}
-          {stack.lerna}
-          {stack.jest}
-          {stack.npm}
+          {tags.typescript}
+          {tags.lerna}
+          {tags.jest}
+          {tags.npm}
+          {tags.open_source}
         </>
       ),
     },
@@ -533,11 +551,12 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.typescript}
-          {stack.graphql}
-          {stack.lerna}
-          {stack.jest}
-          {stack.npm}
+          {tags.typescript}
+          {tags.graphql}
+          {tags.lerna}
+          {tags.jest}
+          {tags.npm}
+          {tags.open_source}
         </>
       ),
     },
@@ -555,8 +574,9 @@ const portfolio: Portfolio = {
       ),
       stack: (
         <>
-          {stack.dart}
-          {stack.flutter}
+          {tags.dart}
+          {tags.flutter}
+          {tags.open_source}
         </>
       ),
     },
