@@ -352,8 +352,8 @@ const portfolio: Portfolio = {
           <br />
           <strong>Platform:</strong> Web, Android, iOS
           <br />
-          <strong>Roles:</strong> Technical Architecture, Team Lead, Frontend
-          Developer, Backend Developer
+          <strong>Roles:</strong> Technical Architecture, Frontend Developer,
+          Backend Developer
         </>
       ),
       stack: (
@@ -364,6 +364,7 @@ const portfolio: Portfolio = {
           {stack["c#"]}
           {stack.mssql}
           {stack.socket_io}
+          {stack.mongo_db}
         </>
       ),
     },

@@ -132,13 +132,32 @@
     display: inline-block;
   }
 
+  .stack-name span {
+    display: inline-block;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
   .skill-level {
     font-size: 12px;
     margin-left: 0.5rem;
-    color: #9BDBFD;
+    color: white;
+    text-transform: lowercase;
+    background-color: #638ba1;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2rem;
 
     @media print {
       font-size: 16px;
+      color: black;
+      font-weight: bold;
+      &::before {
+        content: "[";
+      }
+
+      &::after {
+        content: "]";
+      }
     }
   }
 }
