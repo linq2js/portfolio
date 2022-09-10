@@ -19,24 +19,26 @@ export type Props = PropsWithChildren<{
 const ANIMATE_IN = "backInDown";
 const ANIMATE_OUT = "backOutDown";
 
-const Modal = (props: Props) => {
-  const [show, setShow] = useState(props.show);
-  const actualShow = props.onHide ? props.show : show;
+const Modal = ({ show, onHide, type, children, inline }: Props) => {
+  const [uncontrolledShow, setUncontrolledShow] = useState(show);
+  const actualShow = onHide ? show : uncontrolledShow;
   const containerRef =
     useRef<HTMLDivElement>() as React.RefObject<HTMLDivElement>;
   const onClose = useCallback(() => {
+    if (inline) return;
+
     const hide = () => {
-      if (props.onHide) {
-        props.onHide();
+      if (onHide) {
+        onHide();
       } else {
-        setShow(false);
+        setUncontrolledShow(false);
       }
     };
 
     containerRef.current?.classList.remove(...animate(ANIMATE_IN).split(" "));
     containerRef.current?.classList.add(...animate(ANIMATE_OUT).split(" "));
     setTimeout(hide, 400);
-  }, [props.onHide, setShow]);
+  }, [onHide, inline, setUncontrolledShow]);
   const onPrint = useCallback(() => window.print(), []);
 
   const content = actualShow ? (
@@ -44,21 +46,18 @@ const Modal = (props: Props) => {
       <div
         ref={containerRef}
         className={`modal ${animate(ANIMATE_IN)}`}
-        style={{ placeItems: props.inline ? "center" : "start" }}
+        style={{ placeItems: inline ? "center" : "start" }}
       >
-        <div
-          className="modal-inner"
-          style={{ maxWidth: props.inline ? "" : 800 }}
-        >
+        <div className="modal-inner" style={{ maxWidth: inline ? "" : 800 }}>
           <div className="modal-body">
-            {K("const ")} {V(props.type)} {U("= () => {")}
+            {K("const ")} {V(type)} {U("= () => {")}
             <ChildrenToken>
               <NoPrint>
                 <div className="toolbar">
                   <span className="icon clickable" onClick={onPrint}>
                     <FiPrinter />
                   </span>
-                  {!props.inline && (
+                  {!inline && (
                     <span className="icon clickable" onClick={onClose}>
                       <FiX />
                     </span>
@@ -69,14 +68,14 @@ const Modal = (props: Props) => {
               {K("return ")}
               {U("(")}
               <ChildrenToken>
-                <ElementToken type="">{props.children}</ElementToken>
+                <ElementToken type="">{children}</ElementToken>
               </ChildrenToken>
               {U(");")}
             </ChildrenToken>
             {U("};")}
             <br />
             {K("export default ")}
-            {V(props.type)}
+            {V(type)}
             {U(";")}
           </div>
         </div>
@@ -87,9 +86,9 @@ const Modal = (props: Props) => {
   return (
     <>
       <Printable>
-        <ElementToken type={props.type}>{props.children}</ElementToken>
+        <ElementToken type={type}>{children}</ElementToken>
       </Printable>
-      {props.inline ? content : createPortal(content, document.body)}
+      {inline ? content : createPortal(content, document.body)}
     </>
   );
 };

@@ -25,7 +25,8 @@
 
     @media screen and (min-width: 480px) {
       margin: auto;
-      min-width: 400px;
+      min-width: 480px;
+      max-width: calc(100% - 10px);
       min-height: auto;
     }
 
@@ -175,7 +176,6 @@
 	}
 }
 
-
 .input {
   display: block;
   width: calc(100% - 1rem);
@@ -189,7 +189,12 @@
   border-bottom: 2px solid transparent;
 
   &.invalid {
+    color: #FF6464;
     border-bottom-color: #FF6464;
+
+    &::placeholder {
+      color: #FF6464;
+    }
   }
 }
 

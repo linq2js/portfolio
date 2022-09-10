@@ -215,8 +215,10 @@ const portfolio: Portfolio = {
           Discover the one-click back-up device for your computer or phone that
           anyone can use
           <br />
-          <strong>Roles:</strong> Technical Architecture, Frontend Developer,
-          Backend Developer
+          <strong>Platform:</strong> Desktop, Android, iOS
+          <br />
+          <strong>Roles:</strong> Technical Architecture, Team Lead, Frontend
+          Developer, Backend Developer
         </>
       ),
       stack: (
@@ -242,7 +244,10 @@ const portfolio: Portfolio = {
           The Helpful Tool that Connects to Your Vehicle for Honest Repair
           Advice
           <br />
-          <strong>Roles:</strong> Technical Architecture, Frontend Developer
+          <strong>Platform:</strong> Android, iOS
+          <br />
+          <strong>Roles:</strong> Technical Architecture, Team Lead, Frontend
+          Developer
         </>
       ),
       stack: (
@@ -265,6 +270,9 @@ const portfolio: Portfolio = {
           Showwcase is a network built for coders. It's a platform to connect,
           share knowledge, code, what you're working on, gain feedback, learn,
           ask questions and find new opportunities in the tech community.
+          <br />
+          <strong>Platform:</strong> Web, Android, iOS
+          <br />
           <strong>Roles:</strong> Frontend Developer
         </>
       ),
@@ -286,8 +294,10 @@ const portfolio: Portfolio = {
           contacts and trying to remember all your usernames with a simple tap
           of your phone.
           <br />
-          <strong>Roles:</strong> Technical Architecture, Frontend Developer,
-          Backend Developer
+          <strong>Platform:</strong> Android, iOS
+          <br />
+          <strong>Roles:</strong> Technical Architecture, Team Lead, Frontend
+          Developer, Backend Developer
         </>
       ),
       stack: (
@@ -312,7 +322,10 @@ const portfolio: Portfolio = {
           finder, phone tracker, and all-around device locator at your
           fingertips.
           <br />
-          <strong>Roles:</strong> Technical Architecture, Frontend Developer
+          <strong>Platform:</strong> Android, iOS
+          <br />
+          <strong>Roles:</strong> Technical Architecture, Team Lead, Frontend
+          Developer
         </>
       ),
       stack: (
@@ -336,8 +349,10 @@ const portfolio: Portfolio = {
             results!
           </strong>
           <br />
-          <strong>Roles:</strong> Technical Architecture, Frontend Developer,
-          Backend Developer
+          <strong>Platform:</strong> Web, Android, iOS
+          <br />
+          <strong>Roles:</strong> Technical Architecture, Team Lead, Frontend
+          Developer, Backend Developer
         </>
       ),
       stack: (
@@ -358,6 +373,7 @@ const portfolio: Portfolio = {
           <strong>A generator for YML/YAML files</strong>
           <br />
           Generate one or many files from YML/YAML config file
+          <br />
           <strong>Roles:</strong> Developer
         </>
       ),
@@ -376,6 +392,7 @@ const portfolio: Portfolio = {
       description: (
         <>
           <strong>A React library for creating reactive components</strong>
+          <br />
           <strong>Roles:</strong> Developer
         </>
       ),
@@ -394,6 +411,7 @@ const portfolio: Portfolio = {
       description: (
         <>
           <strong>A tiny lib for DOM rendering</strong>
+          <br />
           <strong>Roles:</strong> Developer
         </>
       ),
@@ -411,6 +429,7 @@ const portfolio: Portfolio = {
       description: (
         <>
           <strong>A library for creating memoized "selector" functions</strong>
+          <br />
           <strong>Roles:</strong> Developer
         </>
       ),
@@ -428,6 +447,7 @@ const portfolio: Portfolio = {
       description: (
         <>
           <strong>An extension for Redux Toolkit</strong>
+          <br />
           <strong>Roles:</strong> Developer
         </>
       ),
@@ -447,6 +467,7 @@ const portfolio: Portfolio = {
       description: (
         <>
           <strong>Styling your app with ease</strong>
+          <br />
           <strong>Roles:</strong> Developer
         </>
       ),
@@ -465,6 +486,7 @@ const portfolio: Portfolio = {
       description: (
         <>
           <strong>Create API mappings with ease</strong>
+          <br />
           <strong>Roles:</strong> Developer
         </>
       ),
@@ -485,6 +507,7 @@ const portfolio: Portfolio = {
             Fast and lightweight library helps you to update js objects without
             mutating them
           </strong>
+          <br />
           <strong>Roles:</strong> Developer
         </>
       ),
@@ -502,6 +525,7 @@ const portfolio: Portfolio = {
       description: (
         <>
           <strong>Extensible Query for REST API</strong>
+          <br />
           <strong>Roles:</strong> Developer
         </>
       ),
@@ -523,6 +547,7 @@ const portfolio: Portfolio = {
             A predictable state management library that based on BLoc library.
             Easy to use and maintenance.
           </strong>
+          <br />
           <strong>Roles:</strong> Developer
         </>
       ),
