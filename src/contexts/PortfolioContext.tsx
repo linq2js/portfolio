@@ -38,7 +38,7 @@ const PortfolioProvider = ({ portfolio, styles }: Props) => {
             </NoPrint>
           </>
         )}
-        {C("Click on a navigation item to see its details", true)}
+        {C("Click on the below element to see its details", true)}
         <br />
         <Page type="About">
           <About />
