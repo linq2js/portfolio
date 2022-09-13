@@ -1,3 +1,5 @@
+$modal-border-width: 1px;
+
 #root {
   margin: 0 auto;
 }
@@ -20,8 +22,8 @@
   .modal-inner {
     @extend .gradient-border;
     margin: 3px;
-    min-width: calc(100% - 6px);
-    min-height: calc(100% - 6px);
+    min-width: calc(100% - ($modal-border-width * 2) - 6px);
+    min-height: calc(100% - ($modal-border-width * 2) - 6px);
 
     @media screen and (min-width: 480px) {
       margin: auto;
@@ -114,6 +116,7 @@
 .skill {
   margin: 0.5rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   vertical-align: middle;
 
@@ -139,18 +142,19 @@
   }
 
   .skill-level {
+    color: #67abe2;
     font-size: 12px;
-    margin-left: 0.5rem;
-    color: white;
     text-transform: lowercase;
-    background-color: #638ba1;
-    padding: 0.25rem 0.5rem;
+    padding: 0.125rem 0.5rem;
     border-radius: 2rem;
+    border: 1px solid currentColor;
 
     @media print {
       font-size: 16px;
       color: black;
       font-weight: bold;
+      border: none;
+
       &::before {
         content: "[";
       }
@@ -162,21 +166,33 @@
   }
 }
 
+.skill-expert {
+  .skill-level, a {
+    color: rgb(208, 152, 48);
+
+    &:hover {
+      color: rgb(246, 181, 61);
+    }
+
+    @media print {
+      color: black;
+    }
+  }
+}
+
 .gradient-border {
-  --borderWidth: 3px;
   background-color: rgba(30, 30, 30, 0.8);
   position: relative;
-  border-radius: var(--borderWidth);
+  border-radius: $modal-border-width;
 }
 .gradient-border:after {
   content: '';
   position: absolute;
-  top: calc(-1 * var(--borderWidth));
-  left: calc(-1 * var(--borderWidth));
-  height: calc(100% + var(--borderWidth) * 2);
-  width: calc(100% + var(--borderWidth) * 2);
+  top: calc(-1 * $modal-border-width);
+  left: calc(-1 * $modal-border-width);
+  height: calc(100% + $modal-border-width * 2);
+  width: calc(100% + $modal-border-width * 2);
   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-  border-radius: calc(2 * var(--borderWidth));
   z-index: -1;
   animation: animatedgradient 3s ease alternate infinite;
   background-size: 300% 300%;

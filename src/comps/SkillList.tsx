@@ -10,7 +10,9 @@ const SkillList = () => {
       {Object.entries(portfolio.skills).map(([key, skill]) => (
         <Fragment key={key}>
           {skill.icon && <strong>{key}:</strong>}
-          <span className="skill icon">
+          <span
+            className={`skill icon skill-${String(skill.level).toLowerCase()}`}
+          >
             {skill.icon ?? skill.name ?? key}
             <span className="skill-level">{skill.level}</span>
           </span>

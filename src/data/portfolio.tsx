@@ -1,6 +1,5 @@
 import { ElementToken } from "../comps/ElementToken";
 import { Portfolio } from "../types";
-import { animate } from "../utils/animate";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { TbBrandNextjs } from "react-icons/tb";
 import { FaAws, FaReact } from "react-icons/fa";
@@ -8,6 +7,7 @@ import {
   SiApollographql,
   SiAzurefunctions,
   SiCss3,
+  SiDotnet,
   SiElectron,
   SiExpo,
   SiExpress,
@@ -21,7 +21,9 @@ import {
   SiMicrosoftazure,
   SiMocha,
   SiMongodb,
+  SiMysql,
   SiPrisma,
+  SiRedis,
   SiRedux,
   SiReduxsaga,
   SiStyledcomponents,
@@ -30,6 +32,7 @@ import {
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { StackIcon } from "../comps/StackIcon";
+import { Fragment } from "react";
 
 const tags = {
   javascript: <StackIcon type="Javascript" icon={<SiJavascript />} />,
@@ -39,6 +42,7 @@ const tags = {
   css3: <StackIcon type="CSS3" icon={<SiCss3 />} />,
   tailwind: <StackIcon type="TailwindCSS" icon={<SiTailwindcss />} />,
   react: <StackIcon type="React" icon={<FaReact />} />,
+  react_query: <StackIcon type="ReactQuery" icon="ReactQuery" />,
   redux: <StackIcon type="Redux" icon={<SiRedux />} />,
   nextjs: <StackIcon type="NextJS" icon={<TbBrandNextjs />} />,
   redux_saga: <StackIcon type="ReduxSaga" icon={<SiReduxsaga />} />,
@@ -65,9 +69,11 @@ const tags = {
   phaser: <StackIcon type="Phaser" icon="Phaser" />,
   socket_io: <StackIcon type="SocketIO" icon="SocketIO" />,
   mssql: <StackIcon type="MSSQL" icon="MSSQL" />,
+  mysql: <StackIcon type="MySQL" icon={<SiMysql />} />,
   dart: <StackIcon type="Dart" icon="Dart" />,
   open_source: <StackIcon type="OpenSource" icon="OpenSource" />,
-  "c#": <StackIcon type="C#" icon="C#" />,
+  dot_net: <StackIcon type=".NET" icon={<SiDotnet />} />,
+  redis: <StackIcon type="Redis" icon={<SiRedis />} />,
   nx: <StackIcon type="Nx" icon="Nx" />,
   iot: <StackIcon type="IOT" icon="IOT" />,
   mongo_db: <StackIcon type="MongoDB" icon={<SiMongodb />} />,
@@ -77,6 +83,125 @@ const tags = {
   expo: <StackIcon type="Expo" icon={<SiExpo />} />,
   electron: <StackIcon type="Electron" icon={<SiElectron />} />,
 };
+
+const npmPackages = [
+  "apidefs",
+  "apiiz",
+  "aposto",
+  "app-sm",
+  "appflow",
+  "azapi",
+  "azux",
+  "canvas-x",
+  "cbor-wrapper",
+  "cubis",
+  "cubiz",
+  "deflux",
+  "domk",
+  "domux",
+  "ezcontext",
+  "ezflow",
+  "ezync",
+  "flovv",
+  "flow-fp",
+  "flux-native",
+  "fluxez",
+  "fluxor",
+  "fomx",
+  "formax-test",
+  "formk",
+  "funcex",
+  "gramod",
+  "hez",
+  "hookex",
+  "hta",
+  "httpex",
+  "hypereact",
+  "ijob",
+  "imez",
+  "imh",
+  "imj",
+  "immhelper",
+  "imstate",
+  "ini-merge",
+  "iscope",
+  "istate",
+  "lidux",
+  "linq2fire",
+  "lodat",
+  "mapex",
+  "mapez",
+  "memosel",
+  "minsto",
+  "moduz",
+  "monostore",
+  "niq",
+  "norarg",
+  "pipx",
+  "qflux",
+  "querj",
+  "qumu",
+  "react-appflow",
+  "react-charm",
+  "react-compx",
+  "react-cubis",
+  "react-enhancer",
+  "react-istate",
+  "react-monostore",
+  "react-mx",
+  "react-query-global-state",
+  "react-smx",
+  "react-tini",
+  "react-tinis",
+  "react-xs",
+  "reactfunc",
+  "reanim",
+  "reasc",
+  "reatomic",
+  "reaxn",
+  "reblok",
+  "recallback",
+  "redat",
+  "redez",
+  "redukit",
+  "redux-thunk-plus",
+  "reez",
+  "rejet",
+  "remos",
+  "remos-immer",
+  "reskin",
+  "rewow",
+  "rexq",
+  "rezux",
+  "rmin",
+  "rtkex",
+  "rxa",
+  "rxapp",
+  "rxmod",
+  "smx",
+  "smz",
+  "stateapi",
+  "stonix",
+  "storeact",
+  "stoze",
+  "stylek",
+  "styman",
+  "temx",
+  "tenx",
+  "tidux",
+  "tinis",
+  "tinux",
+  "tte",
+  "ultralist",
+  "use-scope",
+  "usestable",
+  "valx",
+  "vue-istate",
+  "weeflux",
+  "weeflux-partial-reducer",
+  "xlist",
+  "yml2jdc",
+];
 
 const portfolio: Portfolio = {
   headline: (
@@ -135,6 +260,7 @@ const portfolio: Portfolio = {
         <>
           {tags.react}
           {tags.redux}
+          {tags.react_query}
           {tags.nextjs}
           {tags.redux_saga}
           {tags.styled_component}
@@ -212,8 +338,124 @@ const portfolio: Portfolio = {
     },
   },
   work: {
+    Showwcase: {
+      url: "https://www.showwcase.com/",
+      description: (
+        <>
+          <strong>
+            A brand new way to engage and connect across the world
+          </strong>
+          Showwcase is a network built for coders. It's a platform to connect,
+          share knowledge, code, what you're working on, gain feedback, learn,
+          ask questions and find new opportunities in the tech community.
+          <br />
+          <strong>Platform:</strong> Web, Android, iOS
+          <br />
+          <strong>Roles:</strong> Frontend Developer
+        </>
+      ),
+      stack: (
+        <>
+          {tags.react}
+          {tags.react_query}
+          {tags.nextjs}
+          {tags.flutter}
+        </>
+      ),
+    },
+    StarmathOnline: {
+      url: "https://starmathsonline.com.au/",
+      description: (
+        <>
+          <strong>
+            It is Australia's first primary maths software to deliver a tailored
+            learning experience to every child! It is fun, engaging and deliver
+            results!
+          </strong>
+          <br />
+          <strong>Platform:</strong> Web, Android, iOS
+          <br />
+          <strong>Roles:</strong> Technical Architecture, Frontend Developer,
+          Backend Developer
+        </>
+      ),
+      stack: (
+        <>
+          {tags.react}
+          {tags.phaser}
+          {tags.nodejs}
+          {tags["dot_net"]}
+          {tags.mssql}
+          {tags.socket_io}
+          {tags.mongo_db}
+        </>
+      ),
+    },
+    CTRWOW: {
+      description: (
+        <>
+          <strong>
+            Created By Performance Marketers Who Care About Performance
+          </strong>
+          <br />
+          CTRwow is an enterprise-level content management system with full
+          funnel-building, analytics and tracking designed specifically for
+          advertisers, affiliates, media buyers, and others in the performance
+          marketing industry. CTRwow is an approved sales channel for Shopify
+          allowing easy and full integration to Shopify.
+          <strong>Platform:</strong> Web
+          <br />
+          <strong>Roles:</strong> Team Lead, Frontend Developer
+        </>
+      ),
+      stack: (
+        <>
+          {tags.react}
+          {tags.dot_net}
+          {tags.azure}
+          {tags.azure_functions}
+          {tags.mongo_db}
+        </>
+      ),
+    },
+    CollaborationDashboard: {
+      name: "Collaboration Dashboard",
+      description: (
+        <>
+          <strong>A powerful tool for presentation and analytics data</strong>
+          <br />
+          Most business applications have some kind of dashboard that gives a
+          top-level view of various functions, but there is a problem with these
+          dashboards. We think we have built something that can solve it. It
+          includes a bundle of modules:
+          <ul>
+            <li>User Management</li>
+            <li>Dashboard Management</li>
+            <li>Messenger</li>
+            <li>Document Management</li>
+            <li>Geofence Management</li>
+            <li>Presentation Management</li>
+            <li>Alert / Notification</li>
+            <li>Report Builder</li>
+          </ul>
+          <strong>Platform:</strong> Web
+          <br />
+          <strong>Roles:</strong> Main Developer
+        </>
+      ),
+      stack: (
+        <>
+          {tags.react}
+          {tags.dot_net}
+          {tags.redis}
+          {tags.mongo_db}
+          {tags.mssql}
+          {tags.mysql}
+        </>
+      ),
+    },
     InfinitiKloud: {
-      url: "https://www.infinitikloud.com/",
+      url: "https://www.infinitikloud.com/download-app.html",
       description: (
         <>
           <strong>The Easy, Secure Way to Keep Your Data Safe</strong>
@@ -268,30 +510,7 @@ const portfolio: Portfolio = {
         </>
       ),
     },
-    Showwcase: {
-      url: "https://www.showwcase.com/",
-      description: (
-        <>
-          <strong>
-            A brand new way to engage and connect across the world
-          </strong>
-          Showwcase is a network built for coders. It's a platform to connect,
-          share knowledge, code, what you're working on, gain feedback, learn,
-          ask questions and find new opportunities in the tech community.
-          <br />
-          <strong>Platform:</strong> Web, Android, iOS
-          <br />
-          <strong>Roles:</strong> Frontend Developer
-        </>
-      ),
-      stack: (
-        <>
-          {tags.react}
-          {tags.nextjs}
-          {tags.flutter}
-        </>
-      ),
-    },
+
     YehYeh: {
       url: "https://play.google.com/store/apps/details?id=com.yehyeh.nfc&hl=en_AU&gl=US",
       description: (
@@ -325,7 +544,7 @@ const portfolio: Portfolio = {
       url: "https://apps.apple.com/vn/app/nerlos/id1531683195",
       description: (
         <>
-          <strong>Nerlos Smart Tag & Key Finder 4+</strong>
+          <strong>Nerlos Smart Tag & Key Finder</strong>
           <br />
           Nerlos is the game-changer Bluetooth-enabled device tracker that
           combines a reliable app with a tiny device that turns it into a key
@@ -350,34 +569,7 @@ const portfolio: Portfolio = {
         </>
       ),
     },
-    StarmathOnline: {
-      url: "https://starmathsonline.com.au/",
-      description: (
-        <>
-          <strong>
-            It is Australia's first primary maths software to deliver a tailored
-            learning experience to every child! It is fun, engaging and deliver
-            results!
-          </strong>
-          <br />
-          <strong>Platform:</strong> Web, Android, iOS
-          <br />
-          <strong>Roles:</strong> Technical Architecture, Frontend Developer,
-          Backend Developer
-        </>
-      ),
-      stack: (
-        <>
-          {tags.react}
-          {tags.phaser}
-          {tags.nodejs}
-          {tags["c#"]}
-          {tags.mssql}
-          {tags.socket_io}
-          {tags.mongo_db}
-        </>
-      ),
-    },
+
     YMLGEN: {
       url: "https://marketplace.visualstudio.com/items?itemName=linq2js.ymlgen",
       description: (
@@ -386,7 +578,7 @@ const portfolio: Portfolio = {
           <br />
           Generate one or many files from YML/YAML config file
           <br />
-          <strong>Roles:</strong> Developer
+          <strong>Roles:</strong> Main Developer
         </>
       ),
       stack: (
@@ -406,7 +598,7 @@ const portfolio: Portfolio = {
         <>
           <strong>A React library for creating reactive components</strong>
           <br />
-          <strong>Roles:</strong> Developer
+          <strong>Roles:</strong> Main Developer
         </>
       ),
       stack: (
@@ -426,7 +618,7 @@ const portfolio: Portfolio = {
         <>
           <strong>A tiny lib for DOM rendering</strong>
           <br />
-          <strong>Roles:</strong> Developer
+          <strong>Roles:</strong> Main Developer
         </>
       ),
       stack: (
@@ -445,7 +637,7 @@ const portfolio: Portfolio = {
         <>
           <strong>A library for creating memoized "selector" functions</strong>
           <br />
-          <strong>Roles:</strong> Developer
+          <strong>Roles:</strong> Main Developer
         </>
       ),
       stack: (
@@ -464,7 +656,7 @@ const portfolio: Portfolio = {
         <>
           <strong>An extension for Redux Toolkit</strong>
           <br />
-          <strong>Roles:</strong> Developer
+          <strong>Roles:</strong> Main Developer
         </>
       ),
       stack: (
@@ -485,7 +677,7 @@ const portfolio: Portfolio = {
         <>
           <strong>Styling your app with ease</strong>
           <br />
-          <strong>Roles:</strong> Developer
+          <strong>Roles:</strong> Main Developer
         </>
       ),
       stack: (
@@ -505,7 +697,7 @@ const portfolio: Portfolio = {
         <>
           <strong>Create API mappings with ease</strong>
           <br />
-          <strong>Roles:</strong> Developer
+          <strong>Roles:</strong> Main Developer
         </>
       ),
       stack: (
@@ -527,7 +719,7 @@ const portfolio: Portfolio = {
             mutating them
           </strong>
           <br />
-          <strong>Roles:</strong> Developer
+          <strong>Roles:</strong> Main Developer
         </>
       ),
       stack: (
@@ -546,7 +738,7 @@ const portfolio: Portfolio = {
         <>
           <strong>Extensible Query for REST API</strong>
           <br />
-          <strong>Roles:</strong> Developer
+          <strong>Roles:</strong> Main Developer
         </>
       ),
       stack: (
@@ -569,7 +761,7 @@ const portfolio: Portfolio = {
             Easy to use and maintenance.
           </strong>
           <br />
-          <strong>Roles:</strong> Developer
+          <strong>Roles:</strong> Main Developer
         </>
       ),
       stack: (
@@ -577,6 +769,22 @@ const portfolio: Portfolio = {
           {tags.dart}
           {tags.flutter}
           {tags.open_source}
+        </>
+      ),
+    },
+    "Other Projects": {
+      description: (
+        <>
+          <h3>NPM Packages:</h3>
+          {npmPackages.map((name) => (
+            <Fragment key={name}>
+              {name}:{" "}
+              <a href={`https://www.npmjs.com/package/${name}`}>
+                https://www.npmjs.com/package/{name}
+              </a>
+              <br />
+            </Fragment>
+          ))}
         </>
       ),
     },
