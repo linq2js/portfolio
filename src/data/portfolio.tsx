@@ -7,6 +7,7 @@ import {
   SiApollographql,
   SiAzurefunctions,
   SiCss3,
+  SiD3Dotjs,
   SiDotnet,
   SiElectron,
   SiExpo,
@@ -75,6 +76,7 @@ const tags = {
   dot_net: <StackIcon type=".NET" icon={<SiDotnet />} />,
   redis: <StackIcon type="Redis" icon={<SiRedis />} />,
   nx: <StackIcon type="Nx" icon="Nx" />,
+  d3: <StackIcon type="D3" icon={<SiD3Dotjs />} />,
   iot: <StackIcon type="IOT" icon="IOT" />,
   mongo_db: <StackIcon type="MongoDB" icon={<SiMongodb />} />,
   prisma: <StackIcon type="Prisma" icon={<SiPrisma />} />,
@@ -451,6 +453,7 @@ const portfolio: Portfolio = {
           {tags.mongo_db}
           {tags.mssql}
           {tags.mysql}
+          {tags.d3}
         </>
       ),
     },
