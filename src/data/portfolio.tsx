@@ -1,6 +1,6 @@
 import { ElementToken } from "../comps/ElementToken";
 import { Portfolio } from "../types";
-import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { FiGithub, FiHome, FiLinkedin } from "react-icons/fi";
 import { TbBrandNextjs } from "react-icons/tb";
 import { FaAws, FaReact } from "react-icons/fa";
 import {
@@ -235,11 +235,15 @@ const portfolio: Portfolio = {
     </>
   ),
   links: {
-    github: {
+    HomePage: {
+      url: "https://linq2js.github.io/portfolio/",
+      icon: <FiHome />,
+    },
+    Github: {
       url: "https://github.com/linq2js",
       icon: <FiGithub />,
     },
-    linkedIn: {
+    LinkedIn: {
       url: "https://www.linkedin.com/in/hung-nguyen-1595976b/",
       icon: <FiLinkedin />,
     },

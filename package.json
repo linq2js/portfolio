@@ -6,11 +6,11 @@
   "homepage": "https://linq2js.github.io/portfolio",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
     "deployGithub": "gh-pages -d build",
     "deployNetlify": "yarn build && netlify deploy --prod --dir dist",
-    "predeployGithub": "yarn build"
+    "predeployGithub": "yarn build",
+    "preview": "vite preview",
+    "build": "tsc && vite build --base=/portfolio/"
   },
   "dependencies": {
     "@tippyjs/react": "^4.2.6",
