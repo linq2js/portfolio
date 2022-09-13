@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && mv temp/.nojekyll docs",
     "preview": "vite preview",
     "deploy": "yarn build && netlify deploy --prod --dir dist"
   },
